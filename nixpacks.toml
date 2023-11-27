@@ -24,4 +24,7 @@ cmds = ["python manage.py collectstatic --noinput"]
 
 # Specify the start command for the app
 [phases.start] 
-cmds = ["""python manage.py crontab add python manage.py crontab show gunicorn smartlearning.wsgi"""]
+cmds = "gunicorn smartlearning.wsgi"
+
+[phases.run]
+cmds = ["python manage.py crontab add"]
