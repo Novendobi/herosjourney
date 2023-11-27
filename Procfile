@@ -1,1 +1,2 @@
-web: sh -c "gunicorn 'smartlearning'.wsgi && python manage.py crontab add"
+web: gunicorn 'smartlearning'.wsgi
+credit: python manage.py update_free_credits
