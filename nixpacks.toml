@@ -23,5 +23,4 @@ nixPkgs = ["...", "sqlite"]
 cmds = ["python manage.py collectstatic --noinput"]
 
 # Specify the start command for the app
-[start]
-cmd = ["gunicorn smartlearning.wsgi", "python manage.py crontab add”, “python manage.py crontab show” ]
+[phases.start] cmds = [“python manage.py crontab add”, “python manage.py crontab show”, “gunicorn smartlearning.wsgi”]
