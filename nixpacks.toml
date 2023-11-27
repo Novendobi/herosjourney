@@ -26,5 +26,3 @@ cmds = ["python manage.py collectstatic --noinput"]
 [phases.start] 
 cmd = "gunicorn smartlearning.wsgi"
 
-[phases.run]
-cmds = ["python manage.py crontab add"]
